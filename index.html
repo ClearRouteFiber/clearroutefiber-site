@@ -102,81 +102,172 @@
 </section>
 
 <!-- HISTORY SECTION : THE DIGITAL CHISHOLM TRAIL -->
-<section id="history" class="relative bg-neutral-950 text-neutral-100 overflow-hidden">
+<section id="history" class="relative text-gray-200 bg-black overflow-hidden">
+  <style>
+    /* === BASE === */
+    #history {
+      font-family: "Georgia", "Times New Roman", serif;
+    }
 
-  <!-- Subtle evolving background layers -->
-  <div class="absolute inset-0 bg-gradient-to-b from-stone-900 via-neutral-900 to-neutral-800 opacity-90"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03),transparent_60%)]"></div>
+    /* === BACKGROUND LAYERS === */
+    #history::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(20,18,16,0.95) 0%,
+          rgba(32,28,24,0.95) 30%,
+          rgba(40,40,42,0.95) 60%,
+          rgba(12,14,18,0.98) 100%);
+      z-index: 0;
+    }
 
-  <div class="relative max-w-4xl mx-auto px-6 py-28">
+    #history::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.015) 0px,
+          rgba(255,255,255,0.015) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+      opacity: 0.35;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-    <!-- Vertical Trail Line -->
-    <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-neutral-700 via-neutral-600 to-neutral-500 opacity-60"></div>
+    /* === TRAIL LINE === */
+    .trail {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        rgba(120,100,80,0.4),
+        rgba(160,160,160,0.6),
+        rgba(120,180,255,0.8)
+      );
+      transform: translateX(-50%);
+      z-index: 2;
+    }
 
-    <!-- WAYPOINT 1906 -->
-    <div class="relative mb-32 md:pl-24">
-      <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-neutral-400"></div>
+    /* === WAYPOINTS === */
+    .milestone {
+      position: relative;
+      z-index: 3;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10rem 2rem;
+    }
 
-      <h3 class="text-sm tracking-widest text-neutral-400 uppercase mb-2">
-        Built Before Statehood
-      </h3>
+    .milestone::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 10rem;
+      width: 14px;
+      height: 14px;
+      background: #c9b48a;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px rgba(201,180,138,0.4);
+    }
 
-      <h2 class="text-2xl font-semibold mb-6">
-        <span class="font-bold">1906</span> — The Origins
-      </h2>
+    /* === TYPOGRAPHY === */
+    .era-title {
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
 
-      <p class="mb-4 text-neutral-200 leading-relaxed">
+    .era-year {
+      font-weight: bold;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      color: #d6c7a1;
+    }
+
+    .era-text {
+      max-width: 640px;
+      line-height: 1.7;
+      color: #e5e5e5;
+    }
+
+    /* === FINAL STATEMENT === */
+    .closing {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 12rem 2rem 14rem;
+      font-size: 1.6rem;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #f0f0f0;
+    }
+
+    .closing::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(120,180,255,0.8), transparent);
+      transform: translateX(-50%);
+    }
+  </style>
+
+  <div class="trail"></div>
+
+  <div class="milestone">
+    <div class="era-year">Built Before Statehood</div>
+    <h3 class="era-title">1906 — The Origins</h3>
+    <div class="era-text">
+      <p>
         On August 15, 1906, long before Oklahoma carried a star on the flag, we opened our doors as the Terral Telephone Company. Back then, this was still Indian Territory. Our entire "network" was a single copper line stretched across open ground from Fleetwood to Terral.
       </p>
-
-      <p class="text-neutral-300 leading-relaxed">
+      <p>
         There were no switching centers, no automation—just wire, wood poles, and determination. If you needed to reach someone far away, you didn’t dial a number. You raised your voice from a wooden booth in the lobby and hoped the message carried.
       </p>
     </div>
+  </div>
 
-    <!-- WAYPOINT 1935–1945 -->
-    <div class="relative mb-32 md:pl-24">
-      <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-neutral-400"></div>
-
-      <h2 class="text-2xl font-semibold mb-6">
-        <span class="font-bold">1935–1945</span> — The Grit
-      </h2>
-
-      <p class="mb-4 text-neutral-200 leading-relaxed">
+  <div class="milestone">
+    <h3 class="era-title">1935–1945 — The Grit</h3>
+    <div class="era-text">
+      <p>
         The Depression years tested everything. In 1935, our license to operate cost exactly one dollar. But that paper fee hides the truth: this network was paid for in sweat, long nights, and risk.
       </p>
-
-      <p class="text-neutral-300 leading-relaxed">
+      <p>
         In 1945, our founder J.E. Frisk fell from a telephone pole while working to keep the lines alive. He gave his life doing the job. That sacrifice is not a footnote in our history—it is the foundation. Reliability here has always meant showing up, no matter the cost.
       </p>
     </div>
+  </div>
 
-    <!-- WAYPOINT 1987–PRESENT -->
-    <div class="relative mb-40 md:pl-24">
-      <div class="absolute left-4 md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-neutral-300"></div>
-
-      <h2 class="text-2xl font-semibold mb-6">
-        <span class="font-bold">1987–Present</span> — The Modern Era
-      </h2>
-
-      <p class="mb-4 text-neutral-200 leading-relaxed">
+  <div class="milestone">
+    <h3 class="era-title">1987–Present — The Modern Era</h3>
+    <div class="era-text">
+      <p>
         In 1987, the Segress family took the reins and pushed the company forward without breaking its spine. Hand-crank phones gave way to digital switching.
       </p>
-
-      <p class="text-neutral-300 leading-relaxed">
+      <p>
         In 2003, we brought Wireless Broadband to farms, ranches, and oilfields that larger providers ignored. Formerly operating as 81 Broadband, we now build forward as ClearRoute Fiber—pulling glass through the same soil that once held copper, and future-proofing the communities that trusted us first.
       </p>
     </div>
+  </div>
 
-    <!-- CLOSING MOMENT -->
-    <div class="relative text-center max-w-3xl mx-auto pt-12 border-t border-neutral-700">
-      <p class="text-xl md:text-2xl font-medium text-neutral-100 leading-relaxed">
-        The technology changes—from a $1 license in the Depression to Gigabit speeds today—but the handshake remains the same.
-      </p>
-    </div>
-
+  <div class="closing">
+    The technology changes—from a $1 license in the Depression to Gigabit speeds today—but the handshake remains the same.
   </div>
 </section>
+
 
 
 <!-- PRODUCTS -->
@@ -210,6 +301,7 @@
 
 </body>
 </html>
+
 
 
 
