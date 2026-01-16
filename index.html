@@ -9,32 +9,136 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Cinzel:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
 
   <style>
     body { font-family: 'Inter', sans-serif; }
     .brand-serif { font-family: 'Cinzel', serif; }
+    .parallax { background-attachment: fixed; }
   </style>
 </head>
 
 <body class="bg-[#0f172a] text-[#f8fafc]">
 
-  <!-- NAVIGATION -->
-  <nav class="absolute top-0 left-0 right-0 z-20">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-      <div class="text-2xl md:text-3xl brand-serif tracking-wide text-[#ea580c]">
-        ClearRoute Fiber
+<!-- NAVIGATION -->
+<nav class="absolute top-0 left-0 right-0 z-20">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+    <div class="text-2xl md:text-3xl brand-serif tracking-wide text-[#ea580c]">
+      ClearRoute Fiber
+    </div>
+    <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-200">
+      <a href="#map-section" class="hover:text-white">Coverage</a>
+      <a href="#history" class="hover:text-white">History</a>
+      <a href="#products" class="hover:text-white">Plans</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section
+  class="relative min-h-screen flex items-center justify-center bg-cover bg-center parallax"
+  style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');"
+>
+  <div class="absolute inset-0 bg-[#0f172a]/70"></div>
+
+  <div class="relative z-10 max-w-5xl px-6 text-center">
+
+    <!-- LOGO (ONE TIME, CENTERED) -->
+    <img
+      src="logo.png.jpg"
+      alt="ClearRoute Fiber Logo"
+      class="mx-auto mb-10 h-24 md:h-28 object-contain"
+    />
+
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+      The Digital Chisholm Trail.
+    </h1>
+
+    <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 text-slate-200">
+      Connectivity since 1906. From Indian Territory to Gigabit Fiber, we are blazing a new trail for the Red River Valley.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#reserve" class="bg-[#ea580c] hover:bg-orange-700 text-white font-semibold px-8 py-4 rounded-lg">
+        Check Availability
+      </a>
+      <a href="#products" class="border border-white/60 hover:bg-white hover:text-[#0f172a] px-8 py-4 rounded-lg">
+        Business Solutions
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD CAPTURE -->
+<section id="reserve" class="bg-[#f8fafc] text-[#0f172a] py-24">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-4">Claim Your Connection.</h2>
+    <p class="mb-10 text-slate-700">
+      We are expanding north from Terral to Duncan. Spots on the network are filling fast.
+    </p>
+
+    <form class="grid gap-6">
+      <input type="text" placeholder="Full Name" class="border p-4 rounded" />
+      <input type="tel" placeholder="Phone Number" class="border p-4 rounded" />
+      <input type="text" placeholder="Physical Address" class="border p-4 rounded" />
+      <label class="flex items-center gap-2 font-semibold">
+        <input type="checkbox" class="accent-[#ea580c]" /> Are you a business?
+      </label>
+      <button class="bg-[#ea580c] hover:bg-orange-700 text-white font-semibold px-8 py-4 rounded-lg w-fit">
+        Reserve Now
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map-section" class="bg-[#f8fafc] text-[#0f172a] py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-6">The Fiber Backbone</h2>
+    <p class="mb-12 text-slate-700 max-w-3xl">
+      One north–south line. One spine. From the plains to the Red River.
+    </p>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="bg-[#0f172a] py-28">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-20">Built Before Statehood</h2>
+    <p class="text-slate-300 max-w-4xl">
+      Founded in 1906 as Terral Telephone Company. The technology changed. The handshake didn’t.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" class="bg-[#f8fafc] text-[#0f172a] py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-12">Internet Built for the Plains</h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="border p-8 rounded-xl">
+        <h3 class="text-2xl font-semibold mb-2">The Homestead</h3>
+        <p>100 Mbps — $59.95</p>
       </div>
-      <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-200">
-        <a href="#coverage" class="hover:text-white">Coverage</a>
-        <a href="#history" class="hover:text-white">History</a>
-        <a href="#plans" class="hover:text-white">Plans</a>
+
+      <div class="border-2 border-[#ea580c] p-8 rounded-xl">
+        <h3 class="text-2xl font-semibold mb-2">The Range</h3>
+        <p>500 Mbps — $79.95</p>
+      </div>
+
+      <div class="border p-8 rounded-xl">
+        <h3 class="text-2xl font-semibold mb-2">The Baron</h3>
+        <p>1 Gig — $99.95</p>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class=
+<!-- FOOTER -->
+<footer class="bg-[#0f172a] py-12 text-center">
+  <p class="text-slate-400">© 2026 ClearRoute Fiber. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
